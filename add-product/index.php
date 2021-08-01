@@ -1,8 +1,3 @@
-<?php
-$pageTitle = "Product Add";
-$button1 = "SAVE";
-$button2 = "CANCEL";
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +14,7 @@ $button2 = "CANCEL";
         Product Add
     </div>
     <div class="btn-container">
-        <button id="button1">SAVE</button>
+        <button id="button1">Save</button>
         <button id="button2">CANCEL</button>
     </div>
 </div>
