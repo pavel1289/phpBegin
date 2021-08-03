@@ -2,7 +2,7 @@ window.addEventListener('load', function () {afterLoad();});
 
 function afterLoad() {
     document.getElementById("button1").addEventListener("click", toAdd);
-    document.getElementById("button2").addEventListener("click", massDelete);
+    document.getElementById("delete-product-btn").addEventListener("click", massDelete);
 }
 
 function toAdd() {

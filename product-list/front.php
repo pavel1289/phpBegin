@@ -21,7 +21,7 @@ require 'productList.php';
     </div>
     <div class="btn-container">
         <button id="button1">ADD</button>
-        <button id="button2">MASS DELETE</button>
+        <button id="delete-product-btn">MASS DELETE</button>
     </div>
 </div>
 <div class="products-container">

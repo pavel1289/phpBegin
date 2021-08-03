@@ -74,4 +74,8 @@ body {
   padding: 1vh 1vw 1vh 1vw;
 }
 
+.warning {
+  color: red;
+}
+
 /*# sourceMappingURL=style.css.map */

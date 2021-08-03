@@ -62,7 +62,14 @@ function validateInput() {
         result = "All fields are mandatory, please provide the information.";
         displayError(result);
     } else if (negativeInput(productForm) == true) {
-        result = "Please, only positive numbers for the numeric inputs.";
+        result = "Please, only positive numbers for the numeric inputs(price, ";
+        if (productForm["productType"].value.localeCompare("DVD") == 0) {
+            result = result + "size).";
+        } else if (productForm["productType"].value.localeCompare("Book") == 0) {
+            result = result + "weight).";
+        } else {
+            result = result + "height, width, length).";
+        }
         displayError(result);
     } else if (onlyLetters(productForm["name"].value) == false) {
         result = "Please, a name only consists of alphabetic characters and space(s).";
@@ -130,6 +137,7 @@ function displayError(result) {
     if (error === null) {
         error = document.createElement("p");
         error.id = "error";
+        error.classList.add("warning");
     }
     error.innerHTML = result;
     
