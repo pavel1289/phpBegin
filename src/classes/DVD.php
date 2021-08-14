@@ -24,6 +24,12 @@ class DVD extends Product
         $this->size = $size;
     }
     
+    public function setSpecificProperties($properties)
+    {
+        $this->size = $properties['specificInfo']['size'];
+        $this->setProperties($properties);
+    }
+    
     public function addProduct()
     {
         $sql = "INSERT INTO DVD (sku, name, price, size)

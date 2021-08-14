@@ -46,6 +46,14 @@ class Furniture extends Product
         $this->length = $length;
     }
     
+    public function setSpecificProperties($properties)
+    {
+        $this->height = $properties['specificInfo']['height'];
+        $this->width = $properties['specificInfo']['width'];
+        $this->length = $properties['specificInfo']['length'];
+        $this->setProperties($properties);
+    }
+    
     public function addProduct()
     {
         $sql = "INSERT INTO FURNITURE (sku, name, price, height, width, length)

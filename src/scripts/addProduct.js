@@ -23,34 +23,47 @@ function submitProduct() {
     if (productForm["productType"].value.localeCompare("Furniture") == 0) {
         $.post("saveProduct.php",
         {
+            productType: productForm["productType"].value,
             sku: productForm["sku"].value,
             name: productForm["name"].value,
             price: productForm["price"].value,
-            height: productForm["height"].value,
-            width: productForm["width"].value,
-            length: productForm["length"].value
+            specificInfo:
+            {
+                height: productForm["height"].value,
+                width: productForm["width"].value,
+                length: productForm["length"].value
+            }
         },
         function (data, status) {
         });
     } else if (productForm["productType"].value.localeCompare("Book") == 0) {
         $.post("saveProduct.php",
         {
+            productType: productForm["productType"].value,
             sku: productForm["sku"].value,
             name: productForm["name"].value,
             price: productForm["price"].value,
-            weight: productForm["weight"].value
+            specificInfo:
+            {
+                weight: productForm["weight"].value
+            }
         },
         function (data, status) {
         });
     } else {
         $.post("saveProduct.php",
         {
+            productType: productForm["productType"].value,
             sku: productForm["sku"].value,
             name: productForm["name"].value,
             price: productForm["price"].value,
-            size: productForm["size"].value
+            specificInfo:
+            {
+                size: productForm["size"].value
+            }
         },
         function (data, status) {
+            console.log(data);
         });
     }
 }

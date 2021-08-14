@@ -24,6 +24,12 @@ class Book extends Product
         $this->weight = $weight;
     }
     
+    public function setSpecificProperties($properties)
+    {
+        $this->weight = $properties['specificInfo']['weight'];
+        $this->setProperties($properties);
+    }
+    
     public function addProduct()
     {
         $sql = "INSERT INTO BOOK (sku, name, price, weight)

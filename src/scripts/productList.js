@@ -19,8 +19,12 @@ function massDelete() {
     
     while (i < products.length) {
         if (products[i].childNodes[0].checked == true) {
-            productType = products[i].id;
-            $.post("product-list/massDelete.php", { sku: products[i].childNodes[2].innerText, type: productType}, function (data, status) {});
+            if (products[i].id.length == 3) {
+                productType = products[i].id.toUpperCase();
+            } else {
+                productType = products[i].id.charAt(0).toUpperCase() + products[i].id.slice(1);
+            }
+            $.post("product-list/massDelete.php", { sku: products[i].childNodes[2].innerText, productType: productType}, function (data, status) {});
             products[i].parentElement.removeChild(products[i]);
         } else {
             i = i + 1;

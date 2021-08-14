@@ -22,6 +22,13 @@ abstract class Product
         }
     }
     
+    public function setProperties($properties)
+    {
+        $this->sku = $properties["sku"];
+        $this->name = $properties["name"];
+        $this->price = $properties["price"];
+    }
+    
     abstract public function addProduct();
     abstract public function getProducts();
     abstract public function deleteProduct();
